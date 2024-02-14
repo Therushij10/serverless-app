@@ -1,0 +1,15 @@
+service: todo-service
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: YOUR_REGION
+
+functions:
+  hello:
+    handler: index.handler
+    events:
+      - http:
+          path: hello
+          method: get
+          cors: true
